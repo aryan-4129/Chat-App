@@ -1,10 +1,10 @@
-const express = require("express");
-const {
+import express from "express";
+import {
   getAllUserHandler,
   getMessagesHandler,
   sendMessageHanlder,
-} = require("../controllers/message.controller");
-const { checkLoggedOnly } = require("../middlewares/auth.middleware");
+} from "../controllers/message.controller.js";
+import { checkLoggedOnly } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router.get("/:id", checkLoggedOnly, getMessagesHandler);
 
 router.post("/send/:id", checkLoggedOnly, sendMessageHanlder);
 
-module.exports = router;
+export default router;

@@ -1,7 +1,7 @@
-const generateToken = require("../lib/utils");
-const User = require("../models/user.model");
-const bcrypt = require("bcryptjs");
-const cloudinary = require("../lib/cloudinary");
+import generateToken from "../lib/utils.js";
+import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
+import cloudinary from "../lib/cloudinary.js";
 
 async function signUpHandler(req, res) {
   const { firstName, lastName, email, password } = req.body;
@@ -114,7 +114,7 @@ async function checkAuthHandler(req, res) {
   }
 }
 
-module.exports = {
+export {
   signUpHandler,
   loginHandler,
   logoutHandler,

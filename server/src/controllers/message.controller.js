@@ -1,7 +1,7 @@
-const Message = require("../models/message.model");
-const User = require("../models/user.model");
-const cloudinary = require("../lib/cloudinary");
-const { getSocketRecieverId, io } = require("../lib/socket");
+import Message from "../models/message.model.js";
+import User from "../models/user.model.js";
+import cloudinary from "../lib/cloudinary.js";
+import { getSocketRecieverId, io } from "../lib/socket.js";
 
 const getAllUserHandler = async (req, res) => {
   try {
@@ -70,4 +70,4 @@ const sendMessageHanlder = async (req, res) => {
   }
 };
 
-module.exports = { getAllUserHandler, getMessagesHandler, sendMessageHanlder };
+export { getAllUserHandler, getMessagesHandler, sendMessageHanlder };

@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const User = require("../models/user.model");
+import jwt from "jsonwebtoken";
+import User from "../models/user.model.js";
 
 async function checkLoggedOnly(req, res, next) {
   const token = req.cookies.jwt;
@@ -24,4 +24,4 @@ async function checkLoggedOnly(req, res, next) {
   next();
 }
 
-module.exports = { checkLoggedOnly };
+export { checkLoggedOnly };
